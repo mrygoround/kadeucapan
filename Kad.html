@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jemputan Perkahwinan Raiyan & Fariza</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #fff1f1, #ffeaea);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      min-height: 100vh;
+    }
+    .container {
+      width: 100%;
+      max-width: 500px;
+      margin: 40px auto;
+      background: #ffffff;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 30px;
+    }
+    .header {
+      background: #d6a4a4;
+      color: white;
+      padding: 20px;
+    }
+    .header img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .section {
+      padding: 40px 20px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+      text-align: center;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .rsvp, .ucapan {
+      background: #f8e1e1;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: 0 auto 20px;
+    }
+    input, button, textarea {
+      padding: 10px;
+      margin: 5px;
+      width: 80%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      transition: border-color 0.3s;
+    }
+    input:focus, textarea:focus {
+      border-color: #d6a4a4;
+      outline: none;
+    }
+    button {
+      background-color: #d6a4a4;
+      color: white;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #c58c8c;
+    }
+    .slideshow-container {
+  max-width: 100%;
+  position: relative;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slides {
+  display: none;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+    .countdown {
+      font-size: 18px;
+      color: #d64b4b;
+      margin: 20px auto;
+      display: flex;
+      flex-wrap: wrap; 
+      justify-content: center;
+      gap: 10px;
+    }
+    .countdown-box {
+      background: #fff0f0;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      min-width: 70px;
+      text-align: center;
+    }
+    .message-board {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .message-card {
+      background: #fff0f5;
+      border: 1px solid #f4c2c2;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 10px 0;
+    }
+    .message-card small {
+      font-size: 12px;
+      color: #888;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 600px;
+    }
+    .dua {
+    font-style: italic;
+    margin: 20px 0;
+    }
+    .signature {
+    text-align: right;
+    margin-top: 20px;
+    }
+    hr {
+    background: #373737;
+    }
+    .penjemputStyle {
+    font-family: "BebasKai", serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #d64b4b;
+    }
+    .pengantinStyle {
+    font-family: "HoneyFlorist", serif;
+    font-size: 28px;
+    color: #d64b4b;
+    }
+    .attendance-btns button.active {
+    background-color: #a55c5c !important;
+    border: 2px solid #8b4b4b;
+    }
+    .attendance-btns {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px 0;
+    }
+    .hidden {
+      display: none;
+    }
+    a {
+      display: block;
+      margin-top: 10px;
+      color: #d64b4b;
+      text-decoration: none;
+    }
+    .icon-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #d64b4b;
+      text-decoration: none;
+      margin: 10px 0;
+    }
+    @media (max-width: 480px) {
+      .section {
+        padding: 30px 15px;
+      }
+      input, button, textarea {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+ <audio autoplay loop>
+  <source src="Images/" type="audio/mpeg">
+  Your browser does not support the audio element.
+ </audio>
+
+ <div class="container">
+    <img src="Images/WALI.png" alt="Kad Jemputan Raiyan & Fariza">
+  
+  <div class="header">
+    <img src="Images/salam.png" alt="salam" style="width: 100px; height: auto; vertical-align: middle;">
+    <div class="penjemputStyle">
+        <p style="text-transform: uppercase;">
+        Roshidi Bin Matdrus                            
+        <br>
+        &amp;
+        <br>
+        Kamariah Binti Mohamed Tahir                
+        </p>
+    </div>
+    <p style="letter-spacing: 1px;">
+    Kami Dengan Rasa Penuh Kesyukuran
+    <br>
+    &amp; Sukacita Menjemput
+    <br>
+    Dato' / Datin / Tuan / Puan / Encik / Cik
+    <br>
+    Ke Walimatul urus Puteri Kami
+    </p>
+
+    <div class="pengantinStyle">
+    <p>
+    Muhammad Raiyan Bin Roshidi                        
+    </p>
+    </div>
+    <p style="letter-spacing: 1px;">
+    Dengan Pasangannya
+    </p>
+    <div class="pengantinStyle">
+    <p>
+    Fariza Binti Ahmad Sanusy                        
+    </p>
+    </div>
+    
+    <!--<img src="salam.png" alt="salam" style="width: 100px; height: auto; vertical-align: middle;">
+    <h3>Roshidi Bin Matdrus</h3>
+    <h3>&</h3>
+    <h3>Kamariah Binti Mohamed Tahir</h3>
+    <p>30 November 2025</p>
+    <p>Dengan penuh kesyukuran, kami ingin menjemput anda ke majlis perkahwinan kami</p>-->
+  </div>
+
+  <div class="section">
+    <h2>Maklumat Majlis</h2>
+    <p>Tarikh: 30 November 2025</p>
+    <p>Masa: 11:00 pagi - 4:00 petang</p>
+    <p>Lokasi: Dewan Seri Melati, Putrajaya</p>
+    <a class="icon-link" href="https://maps.google.com" target="_blank">
+      <i class="fas fa-map-marker-alt"></i> Klik untuk lokasi
+    </a>
+    <a class="icon-link" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Majlis+Perkahwinan+Raiyan+%26+Fariza&dates=20251130T030000Z/20251130T080000Z&details=Majlis+di+Dewan+Seri+Melati+Putrajaya&location=Putrajaya" target="_blank">
+      <i class="fas fa-calendar-plus"></i> Tambah ke Google Calendar
+    </a>
+<hr>
+    <div class="countdown">
+      <div class="countdown-box" id="days">0<br>Hari</div>
+      <div class="countdown-box" id="hours">0<br>Jam</div>
+      <div class="countdown-box" id="minutes">0<br>Minit</div>
+      <div class="countdown-box" id="seconds">0<br>Saat</div>
+    </div>
+    <hr>
+  </div>
+
+  <div class="rsvp">
+  <form id="rsvpForm" onsubmit="return submitRSVP(event);">
+    <input type="text" name="nama" id="rsvpNama" placeholder="Nama anda" required><br>
+
+    <input type="hidden" name="kehadiran" id="kehadiranInput">
+    <input type="hidden" name="jumlah" id="jumlahInput">
+
+    <div class="attendance-btns">
+  <button type="button" id="btnHadir" onclick="setKehadiran(true)">Hadir</button>
+  <button type="button" id="btnTakHadir" onclick="setKehadiran(false)">Tidak Hadir</button>
+</div>
+
+    <div id="jumlahTetamuField" class="hidden">
+      <input type="number" id="rsvpJumlah" placeholder="Bilangan tetamu" min="1">
+    </div>
+
+    <button type="submit">Hantar RSVP</button>
+  </form>
+</div>
+
+  <div class="content">
+    
+        <img src="Images/khat.png" alt="khat" style="width: 100px; height: auto; vertical-align: middle;">
+    
+    <p class="dua">
+        "Ya Allah Yang Maha Mencipta, Jadikanlah majlis ini majlis yang mendapat keberkatan dan keredhaanMu, 
+        kekalkanlah ikatan perkahwinan mereka sepanjang hayat, tetapkanlah kasih sayang antara mereka selagi tidak 
+        melebihi kasih padaMu.."
+    </p>
+    <p>
+        "Ya Allah, satukan hati kedua mempelai ini seperti Engkau satukan hati Adam dan Hawa, Yusuf dan Zulaikha 
+        dan seperti Engkau satukan hati Muhammad s.a.w dan Siti Khadijah agar kekal hingga syurgaMu."
+    </p>
+    <div class="dua"> 
+        Aamin, Ya Rabbal 'alamin ..
+    </div>
+</div>
+
+  <div class="section">
+    <div class="slideshow-container">
+      <img class="slides" src="Images/gambar1.JPG" alt="Gambar 1"style="width: 250px; height: auto; vertical-align: middle;">
+      <img class="slides" src="Images/gambar2.JPG" alt="Gambar 2"style="width: 250px; height: auto; vertical-align: middle;">
+      <img class="slides" src="Images/gambar3.JPG" alt="Gambar 3"style="width: 250px; height: auto; vertical-align: middle;">
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Ucapan & Doa</h2>
+    <div class="ucapan">
+      <input type="text" id="ucapanNama" placeholder="Nama anda"><br>
+      <textarea id="ucapanInput" rows="4" placeholder="Tulis ucapan anda di sini..."></textarea><br>
+      <button onclick="kirimUcapan()">Kirim & Papar</button>
+    </div>
+    <div class="message-board" id="messageBoard"></div>
+  </div>
+
+  <div class="section">
+    <p>Dengan ingatan tulus ikhlas,</p>
+    <p><strong>Raiyan & Fariza</strong></p>
+  </div>
+</div>
+
+<div id="toast" style="
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #a55c5c;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 9999;
+">
+  RSVP anda diterima! Terima kasih.
+</div>
+<script>
+  setInterval(() => {
+    const eventDate = new Date("2025-11-30T11:00:00").getTime();
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    if (distance > 0) {
+      const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("days").innerHTML = `${d}<br>Hari`;
+      document.getElementById("hours").innerHTML = `${h}<br>Jam`;
+      document.getElementById("minutes").innerHTML = `${m}<br>Minit`;
+      document.getElementById("seconds").innerHTML = `${s}<br>Saat`;
+    }
+  }, 1000);
+
+  let slideIndex = 0;
+  const showSlides = () => {
+    const slides = document.getElementsByClassName("slides");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 3000);
+  };
+  showSlides();
+
+let hadir = null;
+
+function setKehadiran(val) {
+  hadir = val;
+  document.getElementById("kehadiranInput").value = val ? "Hadir" : "Tidak Hadir";
+  document.getElementById("jumlahTetamuField").classList.toggle("hidden", !val);
+
+  // Highlight butang dipilih
+  document.getElementById("btnHadir").classList.toggle("active", val);
+  document.getElementById("btnTakHadir").classList.toggle("active", !val);
+}
+
+function showToast(msg) {
+  const toast = document.getElementById("toast");
+  toast.textContent = msg;
+  toast.style.display = "block";
+  
+  setTimeout(() => {
+    toast.style.display = "none";
+  }, 3000); // Auto hide in 3 seconds
+}
+
+function submitRSVP(e) {
+  e.preventDefault(); // Hentikan form daripada reload page
+
+  const nama = document.getElementById("rsvpNama").value.trim();
+  const jumlah = hadir ? document.getElementById("rsvpJumlah").value : "0";
+
+  if (!nama || hadir === null) {
+    alert("Sila isi nama dan pilih kehadiran.");
+    return false;
+  }
+
+  if (hadir && (!jumlah || jumlah < 1)) {
+    alert("Sila masukkan bilangan tetamu.");
+    return false;
+  }
+
+  const data = new URLSearchParams();
+  data.append("nama", nama);
+  data.append("kehadiran", hadir ? "Hadir" : "Tidak Hadir");
+  data.append("jumlah", jumlah);
+
+  fetch("https://script.google.com/macros/s/AKfycbxl9dqODh9GU_Onx4bxqgV_68li1E4KWDRZujWoA316Xk-hjPa8GZXO10al7nz79m928w/exec", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: data.toString()
+  })
+  .then(response => response.text())
+  .then(responseText => {
+  showToast("RSVP anda diterima! Terima kasih.");
+  document.getElementById("rsvpForm").reset();
+  document.getElementById("jumlahTetamuField").classList.add("hidden");
+
+  // Reset button warna
+  document.getElementById("btnHadir").classList.remove("active");
+  document.getElementById("btnTakHadir").classList.remove("active");
+  hadir = null;
+})
+  .catch(error => {
+    console.error("RSVP Gagal:", error);
+    showToast("Maaf, RSVP tidak berjaya. Sila cuba semula.");
+  });
+
+  return false;
+}
+  function kirimUcapan() {
+    const nama = document.getElementById("ucapanNama").value.trim();
+    const ucapan = document.getElementById("ucapanInput").value.trim();
+    const board = document.getElementById("messageBoard");
+
+    if (ucapan !== "") {
+      const card = document.createElement("div");
+      card.className = "message-card";
+      card.innerHTML = `${nama ? '<small>' + nama + '</small>' : ''}<p>${ucapan}</p>`;
+      board.appendChild(card);
+      document.getElementById("ucapanNama").value = "";
+      document.getElementById("ucapanInput").value = "";
+    }
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  document.querySelectorAll('.section').forEach(section => {
+    observer.observe(section);
+  });
+</script>
+</body>
+</html>
